@@ -1,5 +1,5 @@
 import test from 'ava';
-const nodeExactVersions = require('../lib/npm-exact-version');
+const nodeExactVersions = require('../lib/npm-exact-versions');
 
 let testFiles = __dirname + '/test_files/';
 let validFile = testFiles + 'valid-package.json'
