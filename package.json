@@ -1,6 +1,6 @@
 {
   "name": "npm-exact-versions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Check if all the dependencies in the package.json have exact versions.",
   "main": "lib/npm-exact-versions.js",
   "scripts": {
