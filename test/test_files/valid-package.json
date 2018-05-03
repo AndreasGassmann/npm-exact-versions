@@ -1,0 +1,22 @@
+{
+	"dependencies": {
+		"ava": "0.25.0",
+		"npm-exact-version": "https://github.com/AndreasGassmann/npm-exact-versions",
+		"yamdbf": "zajrik/yamdbf#indev"
+	},
+	"devDependencies": {
+		"ava": "0.25.0",
+		"npm-exact-version": "https://github.com/AndreasGassmann/npm-exact-versions",
+		"yamdbf": "zajrik/yamdbf#indev"
+	},
+	"optionalDependencies": {
+		"ava": "0.25.0",
+		"npm-exact-version": "https://github.com/AndreasGassmann/npm-exact-versions",
+		"yamdbf": "zajrik/yamdbf#indev"
+	},
+	"peerDependencies": {
+		"ava": "0.25.0",
+		"npm-exact-version": "https://github.com/AndreasGassmann/npm-exact-versions",
+		"yamdbf": "zajrik/yamdbf#indev"
+	}
+}

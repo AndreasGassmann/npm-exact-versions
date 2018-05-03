@@ -1,0 +1,32 @@
+{
+  "name": "npm-exact-versions",
+  "version": "0.0.1",
+  "description": "Check if all the dependencies in the package.json have exact versions.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/ava test/test.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasGassmann/npm-exact-versions.git"
+  },
+  "keywords": [
+    "npm",
+    "cli",
+    "dependencies",
+    "package.json"
+  ],
+  "author": "Andreas Gassmann <andreas@andreasgassmann.ch> (https://github.com/AndreasGassmann)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndreasGassmann/npm-exact-versions/issues"
+  },
+  "homepage": "https://github.com/AndreasGassmann/npm-exact-versions#readme",
+  "devDependencies": {
+    "ava": "^0.25.0"
+  },
+  "preferGlobal": true,
+  "directories": {
+    "bin": "./bin"
+  }
+}
