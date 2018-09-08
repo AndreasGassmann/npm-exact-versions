@@ -7,7 +7,7 @@ yarn-error.log*
 
 # Build files
 lib
-coverage.json
+coverage.lcov
 
 # Runtime data
 pids
