@@ -5,7 +5,7 @@
 	"main": "lib/npm-exact-versions.js",
 	"types": "lib/npm-exact-versions.d.ts",
 	"scripts": {
-		"test": "./node_modules/.bin/ava test/test.js -v",
+		"test": "npm run build && npm run lint && ava test/test.js -v",
 		"build": "tsc",
 		"format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
 		"lint": "tslint -p tsconfig.json",
