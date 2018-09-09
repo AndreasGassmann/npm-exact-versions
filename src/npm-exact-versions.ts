@@ -13,7 +13,7 @@ interface IPackageJson {
   [key: string]: { [k in any]: string } | undefined;
 }
 
-function isJsonValid(json: IPackageJson) {
+export function isValidPackageJson(json: IPackageJson) {
   const dependencyTypes = [
     'dependencies',
     'devDependencies',
@@ -78,7 +78,7 @@ export function npmExactVersions(
     globalLogEnabled = true;
   }
 
-  if (!isJsonValid(packageJson)) {
+  if (!isValidPackageJson(packageJson)) {
     throw new Error("Some packages don't have an exact version!");
   } else {
     return true;

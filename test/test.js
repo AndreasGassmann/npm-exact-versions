@@ -4,9 +4,47 @@ const semver = require('semver');
 
 let testFiles = __dirname + '/test_files/';
 let validFile = testFiles + 'valid-package.json';
+let invalidFile = testFiles + 'invalid-package.json';
 
 test('should read file from path', async t => {
   t.true(nxv.npmExactVersions(validFile));
+});
+
+test('should read file from path and log errors if enabled', async t => {
+  t.true(nxv.npmExactVersions(validFile, true));
+});
+
+test('should throw if package has invalid versions', async t => {
+  const error = t.throws(() => {
+    nxv.npmExactVersions(invalidFile);
+  }, Error);
+
+  t.is(error.message, `Some packages don't have an exact version!`);
+});
+
+test(`should ignore types if they don't exist`, async t => {
+  let json = {
+    dependencies: {
+      'npm-exact-version':
+        'https://github.com/AndreasGassmann/npm-exact-versions',
+    },
+    devDependencies: {
+      ava: '0.25.0',
+    },
+    optionalDependencies: {
+      typescript: '3.0.3',
+    },
+  };
+
+  t.true(nxv.isValidPackageJson(json));
+});
+
+test('should log errors when enabled', async t => {
+  const exactVersions = ['~1.2.3'];
+
+  exactVersions.forEach(version => {
+    t.false(nxv.isExactVersion(version, true));
+  });
 });
 
 test('should accept exact versions', async t => {
@@ -29,7 +67,6 @@ test('should accept exact versions', async t => {
   ];
 
   exactVersions.forEach(version => {
-    // console.log(version, semver.clean(version, true));
     t.true(nxv.isExactVersion(version));
   });
 });
@@ -181,7 +218,6 @@ test('should accept github urls', async t => {
   ];
 
   exactVersionUrls.forEach(version => {
-    // console.log(version, semver.clean(version, true));
     t.true(nxv.isExactVersion(version));
   });
 });
@@ -195,7 +231,6 @@ test('should accept file paths', async t => {
   ].map(url => `file:${url}`);
 
   exactVersionUrls.forEach(version => {
-    // console.log(version, semver.clean(version, true));
     t.true(nxv.isExactVersion(version));
   });
 });
@@ -206,7 +241,6 @@ test('should accept tarball URLs', async t => {
   );
 
   exactVersionUrls.forEach(version => {
-    // console.log(version, semver.clean(version, true));
     t.true(nxv.isExactVersion(version));
   });
 });
