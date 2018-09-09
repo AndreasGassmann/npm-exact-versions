@@ -6,7 +6,7 @@
   "types": "lib/npm-exact-versions.d.ts",
   "scripts": {
     "test": "npm run build && npm run lint && nyc ava test/test.js --reporter=text-lcov",
-    "test-ci": "npm run build && npm run lint && nyc report ava test/test.js --reporter=text-lcov > lcov.info",
+    "test-ci": "npm run test && nyc report ava test/test.js --reporter=text-lcov > lcov.info",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\" \"test/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
