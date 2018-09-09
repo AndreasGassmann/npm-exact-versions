@@ -1,6 +1,7 @@
 # npm-exact-versions
 
 [![Build Status](https://travis-ci.org/AndreasGassmann/npm-exact-versions.svg?branch=master)](https://travis-ci.org/AndreasGassmann/npm-exact-versions)
+[![codecov](https://codecov.io/gh/AndreasGassmann/npm-exact-versions/branch/master/graph/badge.svg)](https://codecov.io/gh/AndreasGassmann/npm-exact-versions)
 
 This package will make sure that you only use exact versions in your package.json. All wildcards will be rejected.
 
