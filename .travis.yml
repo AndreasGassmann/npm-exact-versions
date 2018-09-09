@@ -4,6 +4,7 @@ node_js:
   - '6'
   - '10'
 script:
+  - npm run test
   - npm install codecov -g
 after_success:
   - codecov
