@@ -6,6 +6,10 @@ let testFiles = __dirname + '/test_files/';
 let validFile = testFiles + 'valid-package.json';
 let invalidFile = testFiles + 'invalid-package.json';
 
+test('should read default package.json', async t => {
+  t.true(nxv.npmExactVersions());
+});
+
 test('should read file from path', async t => {
   t.true(nxv.npmExactVersions(validFile));
 });
@@ -43,7 +47,7 @@ test('should log errors when enabled', async t => {
   const exactVersions = ['~1.2.3'];
 
   exactVersions.forEach(version => {
-    t.false(nxv.isExactVersion(version, true));
+    t.false(nxv.isExactVersion(version, 'test', true));
   });
 });
 
@@ -68,6 +72,7 @@ test('should accept exact versions', async t => {
 
   exactVersions.forEach(version => {
     t.true(nxv.isExactVersion(version));
+    t.true(nxv.isExactVersion(version, 'test', true));
   });
 });
 
@@ -202,6 +207,7 @@ test('should reject invalid versions', async t => {
 
   invalidVersions.forEach(version => {
     t.false(nxv.isExactVersion(version));
+    t.false(nxv.isExactVersion(version, 'test', true));
   });
 });
 

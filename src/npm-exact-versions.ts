@@ -74,9 +74,7 @@ export function npmExactVersions(
 ) {
   const packageJson = JSON.parse(readFileSync(packageJsonPath, 'utf8'));
 
-  if (logEnabled) {
-    globalLogEnabled = true;
-  }
+  globalLogEnabled = logEnabled;
 
   if (!isValidPackageJson(packageJson)) {
     throw new Error("Some packages don't have an exact version!");

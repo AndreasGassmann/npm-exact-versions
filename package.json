@@ -32,11 +32,14 @@
     "exact-version"
   ],
   "author": "Andreas Gassmann <andreas@andreasgassmann.ch> (https://github.com/AndreasGassmann)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/AndreasGassmann/npm-exact-versions/issues"
   },
   "homepage": "https://github.com/AndreasGassmann/npm-exact-versions#readme",
+  "dependencies": {
+    "semver": "5.5.1"
+  },
   "devDependencies": {
     "@types/node": "10.9.4",
     "@types/semver": "5.5.0",
@@ -51,8 +54,5 @@
   "preferGlobal": true,
   "bin": {
     "npm-exact-versions": "./cli.js"
-  },
-  "dependencies": {
-    "semver": "5.5.1"
   }
 }
